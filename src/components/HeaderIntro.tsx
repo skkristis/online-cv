@@ -17,11 +17,11 @@ export default function HeaderIntro() {
   return (
     <div className="LandingPage-intro">
       <h1 className="LandingPage-h1">Hello, I am Kristoferis, a web developer</h1>
-      <a className="btn" target="_blank" href="mailto: skkristis@gmail.com">
+      <a className="btn Header-email" target="_blank" href="mailto: skkristis@gmail.com">
         Email me
       </a>
       <ul className="LandingPage-ul">
-        {listItems.map((entry) => {
+        {listItems.map((entry, i) => {
           return (
             <li className="LandingPage-li" key={entry.socialName}>
               <a target="_blank" href={entry.href}>

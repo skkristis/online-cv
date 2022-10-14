@@ -47,10 +47,13 @@
 
 @media (max-width: 768px) {
   .LandingPage-container {
-    flex-direction: column-reverse;
+    flex-direction: column;
+  }
+  .Header-email {
+    align-self: center;
   }
   .LandingPage-photo_container {
-    max-height: 500px;
+    max-height: 400px;
   }
   .LandingPage-intro {
     text-align: center;

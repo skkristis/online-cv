@@ -8,9 +8,8 @@ type Props = {
 export default function FooterSocials({ socialsListItems }: Props) {
   return (
     <article>
-      <h3>Socials</h3>
       <ul className="Footer-ul">
-        {socialsListItems.map((entry) => {
+        {socialsListItems.map((entry, i) => {
           return (
             <li className="FooterContacts-li" key={entry.socialName}>
               <a target="_blank" href={entry.href}>

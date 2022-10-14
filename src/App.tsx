@@ -5,6 +5,7 @@ import AboutMe from "./components/AboutMe";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import FooterContacts from "./components/Footer";
+import { useInView } from "react-intersection-observer";
 
 export default function Root() {
   const aboutMeRef = useRef<HTMLDivElement>(null);

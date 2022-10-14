@@ -1,6 +1,7 @@
 import "../stylesheets/Header.css";
 import HeaderIntro from "./HeaderIntro";
 import pfpImgUrl from "../../media/profile-pic.jpg";
+import AnimationWrapper from "./AnimationWrapper";
 
 export default function Header() {
   return (

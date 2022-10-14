@@ -2,6 +2,7 @@ import "../stylesheets/AppBar.css";
 import AppBarUl from "./AppBarUl";
 import { useState } from "react";
 import { AppBarProps } from "../types";
+import AnimationWrapper from "./AnimationWrapper";
 
 export default function AppBar({ aboutMeRef, aboutFooterContacts, experienceRef, projectsRef }: AppBarProps) {
   const [menuState, setMenuState] = useState(false);
@@ -28,11 +29,13 @@ export default function AppBar({ aboutMeRef, aboutFooterContacts, experienceRef,
     <nav className="AppBarColor">
       <div className="container-max-AppBar AppBar">
         <article className="AppBar-name_container">
-          <button className="button-reset" onClick={() => setMenuState(false)}>
-            <a className="AppBar-a" href="#">
-              <h3>K. Solovjov</h3>
-            </a>
-          </button>
+          <AnimationWrapper type="top_to_bottom">
+            <button className="button-reset" onClick={() => setMenuState(false)}>
+              <a className="AppBar-a" href="#">
+                <h3>K. Solovjov</h3>
+              </a>
+            </button>
+          </AnimationWrapper>
         </article>
         <AppBarUl listItems={listItems} menuState={menuState} setMenuState={setMenuState} />
       </div>

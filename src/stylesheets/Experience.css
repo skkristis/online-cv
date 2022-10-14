@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 10px;
+  gap: 25px;
 }
 .flex1 {
   flex: 1;
@@ -38,6 +38,7 @@
   flex-direction: column;
   gap: 10px;
   margin-top: 10px;
+  text-align: right;
 }
 
 .Experience-li > a {

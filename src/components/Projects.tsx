@@ -3,6 +3,7 @@ import "../stylesheets/Projects.css";
 import { FetchedProjects } from "../types";
 import ProjectsList from "./ProjectsList";
 import { useGetRepositories } from "../hooks/projects.hooks";
+import AnimationWrapper from "./AnimationWrapper";
 
 const Projects = forwardRef(({}, ref) => {
   const repositories = useGetRepositories();
@@ -44,7 +45,9 @@ const Projects = forwardRef(({}, ref) => {
   return (
     <section ref={ref as React.MutableRefObject<HTMLDivElement>} className="Projects-bg_color">
       <div className="container-max Projects-container">
-        <h1 className="Projects-h1">PROJECTS</h1>
+        <AnimationWrapper type="top_to_bottom">
+          <h1 className="Projects-h1">PROJECTS</h1>
+        </AnimationWrapper>
         <div className="Projects-article_container">
           <ProjectsList
             language="TypeScript"
@@ -55,11 +58,13 @@ const Projects = forwardRef(({}, ref) => {
             projects={repositories.data.filter((project: FetchedProjects) => project.language === "JavaScript")}
           />
         </div>
-        <button className="button-reset Projects-see_more">
-          <a target="_blacnk" href="https://github.com/skkristis">
-            See more at my GitHub
-          </a>
-        </button>
+        <AnimationWrapper type="bottom_to_top">
+          <button className="button-reset Projects-see_more">
+            <a target="_blacnk" href="https://github.com/skkristis">
+              See more at my GitHub
+            </a>
+          </button>
+        </AnimationWrapper>
       </div>
     </section>
   );

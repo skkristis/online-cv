@@ -1,6 +1,7 @@
 import { SetStateAction } from "../types";
 import menuCloseIcon from "../../media/close-icon.svg";
 import menuOpenIcon from "../../media/menu-icon.svg";
+import AnimationWrapper from "./AnimationWrapper";
 
 type Props = {
   listItems: {
@@ -39,13 +40,15 @@ export default function AppBarUl({ listItems, menuState, setMenuState }: Props) 
         </ul>
       </div>
       <ul className="AppBar-ul">
-        {listItems.map((entry) => {
+        {listItems.map((entry, i) => {
           return (
-            <li key={entry.sectionName}>
-              <button className="AppBar-button" onClick={entry.onClick}>
-                {entry.sectionName}
-              </button>
-            </li>
+            <AnimationWrapper key={entry.sectionName} type="top_to_bottom" delay={200 * i + 100}>
+              <li>
+                <button className="AppBar-button" onClick={entry.onClick}>
+                  {entry.sectionName}
+                </button>
+              </li>
+            </AnimationWrapper>
           );
         })}
       </ul>
