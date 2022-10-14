@@ -1,0 +1,51 @@
+.AboutMe-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 150px;
+  background: #fef5ed;
+}
+.AboutMe-bg_color {
+  background: #fef5ed;
+}
+.AboutMe-background_container {
+  align-self: center;
+  max-width: 600px;
+  text-align: justify;
+}
+.AboutMe-skills_container {
+  width: 130px;
+}
+.AboutMe-section_header {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.AboutMe-skills_ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.AboutMe-skills_li {
+  list-style: circle;
+}
+
+@media (max-width: 768px) {
+  .AboutMe-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .AboutMe-skills_container {
+    width: auto;
+  }
+  .AboutMe-section_header {
+    text-align: center;
+  }
+  .AboutMe-skills_ul {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .AboutMe-skills_li {
+    list-style: none;
+  }
+}

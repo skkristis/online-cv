@@ -1,0 +1,107 @@
+.AppBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  gap: 60px;
+  padding: 0px 20px;
+}
+
+.AppBar-a {
+  text-decoration: none;
+  font-size: 20px;
+}
+.AppBar-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
+  border-bottom: 3px solid transparent;
+}
+.AppBar-button:hover {
+  opacity: 0.8;
+  border-bottom: 3px solid #d3e4cd;
+}
+.AppBar-ul_container {
+  max-width: 550px;
+  width: 100%;
+}
+.AppBar-ul {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+.container-max-AppBar {
+  max-width: 1224px;
+  margin: auto;
+}
+.AppBarColor {
+  width: 100vw;
+  height: 64px;
+  background: #99a799;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.menu-icon {
+  height: 25px;
+  align-self: flex-end;
+}
+
+.phone-menu {
+  display: none;
+}
+
+.AppBar-ul-phone-menu {
+  border-top: 0.5px solid #3c2317;
+  display: flex;
+  flex-direction: column;
+  padding-block: 15px;
+  background: #99a799;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  transition: 0.5s;
+  transform: translateX(-100%);
+}
+.AppBar-ul-phone_menu-open {
+  transform: translateX(0);
+}
+@media (max-width: 768px) {
+  .AppBar-ul_container {
+    width: auto;
+  }
+  .phone-menu {
+    display: block;
+  }
+  .AppBar-ul_container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .menu-icon {
+    display: block;
+  }
+  .AppBar-ul-phone-menu {
+    z-index: 2;
+  }
+  .AppBar-ul {
+    display: none;
+  }
+  .AppBar-button {
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+    height: 20vh;
+    padding-block: 15px;
+  }
+  .AppBar-button:hover {
+    border-bottom: none;
+  }
+}

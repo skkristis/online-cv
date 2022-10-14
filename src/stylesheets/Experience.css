@@ -1,0 +1,60 @@
+.Experience-container {
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  background: #d3e4cd;
+}
+.Experience-bg_color {
+  background: #d3e4cd;
+}
+.Experience-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+.Experience-li > span > a {
+  transition: 0.3s;
+  border-bottom: 3px solid transparent;
+  text-decoration: none;
+}
+.Experience-li > span > a:hover {
+  opacity: 0.8;
+  border-bottom: 3px solid #fef5ed;
+}
+.Experience-ul {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
+}
+.flex1 {
+  flex: 1;
+}
+.Experience-li:first-of-type {
+  margin-top: 0;
+}
+.Experience-li {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.Experience-li > a {
+  text-decoration: none;
+}
+
+.Experience-li__educationOrigin {
+  font-size: 20px;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .Experience-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
