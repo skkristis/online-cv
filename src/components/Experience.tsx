@@ -30,25 +30,32 @@ const Experience = forwardRef(({}, ref) => {
     {
       educationOrigin: "The Odin Project",
       specification: "Full Stack JavaScript",
-      hrefEducationOrigin: "https://www.linkedin.com/company/the-odin-project/about/",
-      hrefSpecification: "https://www.theodinproject.com/paths/full-stack-javascript?",
+      hrefEducationOrigin:
+        "https://www.linkedin.com/company/the-odin-project/about/",
+      hrefSpecification:
+        "https://www.theodinproject.com/paths/full-stack-javascript?",
     },
     {
       educationOrigin: "freeCodeCamp",
       specification: "JavaScript Algorithms and Data Structures",
-      hrefEducationOrigin: "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/",
+      hrefEducationOrigin:
+        "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/",
       hrefSpecification: "https://www.linkedin.com/school/free-code-camp/",
     },
     {
       educationOrigin: "freeCodeCamp",
       specification: "Responsive Web Design",
-      hrefEducationOrigin: "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
+      hrefEducationOrigin:
+        "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
       hrefSpecification: "https://www.linkedin.com/school/free-code-camp/",
     },
   ];
 
   return (
-    <section ref={ref as React.MutableRefObject<HTMLDivElement>} className="Experience-bg_color">
+    <section
+      ref={ref as React.MutableRefObject<HTMLDivElement>}
+      className="Experience-bg_color"
+    >
       <div className="Experience-container container-max">
         <ExperienceEducation educationListItems={educationListItems} />
         <ExperienceCourses coursesListItems={coursesListItems} />

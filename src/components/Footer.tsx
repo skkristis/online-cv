@@ -19,7 +19,10 @@ const Footer = forwardRef(({}, ref) => {
   ];
 
   return (
-    <footer ref={ref as React.MutableRefObject<HTMLDivElement>} className="Footer-bg_color">
+    <footer
+      ref={ref as React.MutableRefObject<HTMLDivElement>}
+      className="Footer-bg_color"
+    >
       <div className="Footer container-max">
         <h2>K. Solovjov</h2>
         <section className="Footer-section">

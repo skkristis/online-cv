@@ -9,7 +9,7 @@ export default function FooterSocials({ socialsListItems }: Props) {
   return (
     <article>
       <ul className="Footer-ul">
-        {socialsListItems.map((entry, i) => {
+        {socialsListItems.map((entry) => {
           return (
             <li className="FooterContacts-li" key={entry.socialName}>
               <a target="_blank" href={entry.href}>

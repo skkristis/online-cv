@@ -3,14 +3,17 @@ import "../stylesheets/Projects.css";
 import { FetchedProjects } from "../types";
 import ProjectsList from "./ProjectsList";
 import { useGetRepositories } from "../hooks/projects.hooks";
-import AnimationWrapper from "./AnimationWrapper";
+import AnimationContainer from "./AnimationContainer";
 
 const Projects = forwardRef(({}, ref) => {
   const repositories = useGetRepositories();
 
   if (repositories.status === "loading") {
     return (
-      <section ref={ref as React.MutableRefObject<HTMLDivElement>} className="Projects-bg_color">
+      <section
+        ref={ref as React.MutableRefObject<HTMLDivElement>}
+        className="Projects-bg_color"
+      >
         <div className="container-max Projects-container">
           <div className="loader">Loading...</div>
         </div>
@@ -20,9 +23,14 @@ const Projects = forwardRef(({}, ref) => {
 
   if (repositories.status === "error") {
     return (
-      <section ref={ref as React.MutableRefObject<HTMLDivElement>} className="Projects-bg_color">
+      <section
+        ref={ref as React.MutableRefObject<HTMLDivElement>}
+        className="Projects-bg_color"
+      >
         <div className="container-max Projects-container ">
-          <h1 className="Projects-h1">Something went wrong fetching projects.</h1>
+          <h1 className="Projects-h1">
+            Something went wrong fetching projects.
+          </h1>
         </div>
       </section>
     );
@@ -30,7 +38,10 @@ const Projects = forwardRef(({}, ref) => {
 
   if (repositories.data.message) {
     return (
-      <section ref={ref as React.MutableRefObject<HTMLDivElement>} className="Projects-bg_color">
+      <section
+        ref={ref as React.MutableRefObject<HTMLDivElement>}
+        className="Projects-bg_color"
+      >
         <div className="container-max Projects-container ">
           <h1 className="Projects-h1">GitHub API rate limit exceeded</h1>
           <button className="button-reset Projects-see_more">
@@ -43,28 +54,35 @@ const Projects = forwardRef(({}, ref) => {
     );
   }
   return (
-    <section ref={ref as React.MutableRefObject<HTMLDivElement>} className="Projects-bg_color">
+    <section
+      ref={ref as React.MutableRefObject<HTMLDivElement>}
+      className="Projects-bg_color"
+    >
       <div className="container-max Projects-container">
-        <AnimationWrapper type="top_to_bottom">
+        <AnimationContainer type="top_to_bottom">
           <h1 className="Projects-h1">PROJECTS</h1>
-        </AnimationWrapper>
+        </AnimationContainer>
         <div className="Projects-article_container">
           <ProjectsList
             language="TypeScript"
-            projects={repositories.data.filter((project: FetchedProjects) => project.language === "TypeScript")}
+            projects={repositories.data.filter(
+              (project: FetchedProjects) => project.language === "TypeScript"
+            )}
           />
           <ProjectsList
             language="JavaScript"
-            projects={repositories.data.filter((project: FetchedProjects) => project.language === "JavaScript")}
+            projects={repositories.data.filter(
+              (project: FetchedProjects) => project.language === "JavaScript"
+            )}
           />
         </div>
-        <AnimationWrapper type="bottom_to_top">
+        <AnimationContainer type="bottom_to_top">
           <button className="button-reset Projects-see_more">
             <a target="_blacnk" href="https://github.com/skkristis">
               See more at my GitHub
             </a>
           </button>
-        </AnimationWrapper>
+        </AnimationContainer>
       </div>
     </section>
   );

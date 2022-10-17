@@ -1,12 +1,16 @@
 import { useInView } from "react-intersection-observer";
-import "../stylesheets/AnimationWrapper.css";
+import "../stylesheets/AnimationContainer.css";
 
 type Props = {
   children: JSX.Element;
   type: string;
   delay?: number;
 };
-export default function AnimationWrapper({ children, type, delay = 0 }: Props) {
+export default function AnimationContainer({
+  children,
+  type,
+  delay = 0,
+}: Props) {
   const { ref: elRef, inView: elIsVisible, entry: targetElement } = useInView();
 
   if (elIsVisible) {
@@ -16,7 +20,11 @@ export default function AnimationWrapper({ children, type, delay = 0 }: Props) {
   }
 
   return (
-    <div ref={elRef} style={{ transitionDelay: `${delay}ms` }} className={`animation-hidden-${type}`}>
+    <div
+      ref={elRef}
+      style={{ transitionDelay: `${delay}ms` }}
+      className={`animation-hidden-${type}`}
+    >
       {children}
     </div>
   );

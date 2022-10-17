@@ -1,4 +1,4 @@
-import AnimationWrapper from "./AnimationWrapper";
+import AnimationContainer from "./AnimationContainer";
 
 type Props = {
   coursesListItems: {
@@ -11,16 +11,24 @@ type Props = {
 export default function ExperienceCourses({ coursesListItems }: Props) {
   return (
     <div className="Experience-section">
-      <AnimationWrapper type="left_to_right">
+      <AnimationContainer type="left_to_right">
         <h3 className="flex1">COURSES</h3>
-      </AnimationWrapper>
+      </AnimationContainer>
       <ul className="Experience-ul">
         {coursesListItems.map((entry, i) => {
           return (
-            <AnimationWrapper key={entry.specification} type="right_to_left" delay={200 * i}>
+            <AnimationContainer
+              key={entry.specification}
+              type="right_to_left"
+              delay={200 * i}
+            >
               <li className=" Experience-li">
                 <span>
-                  <a target="_blank" className="Experience-li__educationOrigin" href={entry.hrefEducationOrigin}>
+                  <a
+                    target="_blank"
+                    className="Experience-li__educationOrigin"
+                    href={entry.hrefEducationOrigin}
+                  >
                     {entry.educationOrigin}
                   </a>
                 </span>
@@ -30,7 +38,7 @@ export default function ExperienceCourses({ coursesListItems }: Props) {
                   </a>
                 </span>
               </li>
-            </AnimationWrapper>
+            </AnimationContainer>
           );
         })}
       </ul>

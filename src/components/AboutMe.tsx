@@ -2,7 +2,7 @@ import "../stylesheets/AboutMe.css";
 import { forwardRef } from "react";
 import AboutMeSkills from "./AboutMeSkills";
 import AboutMeBackground from "./AboutMeBackground";
-import AnimationWrapper from "./AnimationWrapper";
+import AnimationContainer from "./AnimationContainer";
 
 const AboutMe = forwardRef(({}, ref) => {
   const listItems = [
@@ -11,6 +11,9 @@ const AboutMe = forwardRef(({}, ref) => {
     },
     {
       skillName: "React.Js",
+    },
+    {
+      skillName: "Node.Js",
     },
     {
       skillName: "JavaScript",
@@ -24,14 +27,17 @@ const AboutMe = forwardRef(({}, ref) => {
   ];
 
   return (
-    <section ref={ref as React.MutableRefObject<HTMLDivElement>} className="AboutMe-bg_color">
+    <section
+      ref={ref as React.MutableRefObject<HTMLDivElement>}
+      className="AboutMe-bg_color"
+    >
       <div className="AboutMe-container container-max ">
-        <AnimationWrapper type="left_to_right">
+        <AnimationContainer type="left_to_right">
           <AboutMeBackground />
-        </AnimationWrapper>
-        <AnimationWrapper type="right_to_left">
+        </AnimationContainer>
+        <AnimationContainer type="right_to_left">
           <AboutMeSkills listItems={listItems} />
-        </AnimationWrapper>
+        </AnimationContainer>
       </div>
     </section>
   );

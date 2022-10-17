@@ -1,4 +1,4 @@
-import AnimationWrapper from "./AnimationWrapper";
+import AnimationContainer from "./AnimationContainer";
 
 type Props = {
   listItems: {
@@ -13,9 +13,13 @@ export default function AboutMeSkills({ listItems }: Props) {
       <ul className="AboutMe-skills_ul">
         {listItems.map((entry, i) => {
           return (
-            <AnimationWrapper key={entry.skillName} type="right_to_left" delay={200 * i}>
+            <AnimationContainer
+              key={entry.skillName}
+              type="right_to_left"
+              delay={200 * i}
+            >
               <li className="AboutMe-skills_li">{entry.skillName}</li>
-            </AnimationWrapper>
+            </AnimationContainer>
           );
         })}
       </ul>
